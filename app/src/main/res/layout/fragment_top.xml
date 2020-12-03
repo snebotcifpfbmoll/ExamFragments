@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".TopFragment">
 
-    <RelativeLayout
+    <EditText
+        android:id="@+id/textInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sample_text" />
+
+    <SeekBar
+        android:id="@+id/textSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textInput"
+        android:layout_centerHorizontal="true"
+        android:max="100"
+        android:minHeight="40sp"
+        android:progressTint="@color/sliderTopProgress"
+        android:thumbTint="@color/sliderTopThumb" />
 
-        <EditText
-            android:id="@+id/textInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/sample_text" />
-
-        <SeekBar
-            android:id="@+id/textSize"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="40sp"
-            android:layout_below="@+id/textInput"
-            android:layout_centerHorizontal="true"
-            android:max="100"
-            android:progressTint="@color/sliderTopProgress"
-            android:thumbTint="@color/sliderTopThumb" />
-
-        <Button
-            android:id="@+id/textButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textSize"
-            android:layout_centerHorizontal="true"
-            android:text="@string/change_text" />
-    </RelativeLayout>
-</FrameLayout>
+    <Button
+        android:id="@+id/textButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textSize"
+        android:layout_centerHorizontal="true"
+        android:text="@string/change_text" />
+</RelativeLayout>
