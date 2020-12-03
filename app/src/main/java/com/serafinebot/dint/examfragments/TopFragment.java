@@ -7,13 +7,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SeekBar;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_two#newInstance} factory method to
+ * Use the {@link TopFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_two extends Fragment {
+public class TopFragment extends Fragment {
+    private static final String TAG = "fragment_top";
+
+    private EditText editText = null;
+    private SeekBar seekBar = null;
+    private Button changeTextButton = null;
+    public FragmentDelegate delegate = null;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +33,7 @@ public class fragment_two extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_two() {
+    public TopFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +43,11 @@ public class fragment_two extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_two.
+     * @return A new instance of fragment fragment_top.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_two newInstance(String param1, String param2) {
-        fragment_two fragment = new fragment_two();
+    public static TopFragment newInstance(String param1, String param2) {
+        TopFragment fragment = new TopFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,7 +67,18 @@ public class fragment_two extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_top, container, false);
+
+        editText = view.findViewById(R.id.textInput);
+        seekBar = view.findViewById(R.id.textSize);
+        changeTextButton = view.findViewById(R.id.textButton);
+
+        changeTextButton.setOnClickListener(v -> {
+            int textSize = seekBar.getProgress();
+            String text = String.valueOf(editText.getText());
+            if (delegate != null) delegate.didChangeText(text, textSize);
+        });
+
+        return view;
     }
 }

@@ -1,16 +1,18 @@
 package com.serafinebot.dint.examfragments;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentDelegate {
     private static final String TAG = "MainActivity";
+
+    private TopFragment topFragment = null;
+    private TwoFragment twoFragment = null;
+    private ColorFragment colorFragment = null;
 
     @SuppressLint("ResourceType")
     @Override
@@ -18,9 +20,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*fragment_top fragmentTop = new fragment_top(R.layout.fragment_top);
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(fragmentTop.getLayout(), fragmentTop).commit();*/
-        fragment_top top = (fragment_top) getSupportFragmentManager().findFragmentById(R.layout.fragment_top);
+        topFragment = (TopFragment) getSupportFragmentManager().findFragmentById(R.id.topFragment);
+        topFragment.delegate = this;
+
+        twoFragment = (TwoFragment) getSupportFragmentManager().findFragmentById(R.id.twoFragment);
+        colorFragment = (ColorFragment) getSupportFragmentManager().findFragmentById(R.id.colorFragment);
+        colorFragment.delegate = this;
+    }
+
+    @Override
+    public void didChangeText(String text, int size) {
+        Log.d(TAG, "didChangeText: " + text + size);
+        if (twoFragment != null) twoFragment.updateText(text, size);
+    }
+
+    @Override
+    public void didChangeColor(Color color) {
+        if (twoFragment != null) twoFragment.updateColor(color);
     }
 }

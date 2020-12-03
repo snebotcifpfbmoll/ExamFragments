@@ -7,14 +7,14 @@
 
     <fragment
         android:id="@+id/topFragment"
-        android:name="com.serafinebot.dint.examfragments.fragment_top"
+        android:name="com.serafinebot.dint.examfragments.TopFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_top" />
 
     <fragment
         android:id="@+id/twoFragment"
-        android:name="com.serafinebot.dint.examfragments.fragment_two"
+        android:name="com.serafinebot.dint.examfragments.TwoFragment"
         android:layout_width="match_parent"
         android:layout_height="400sp"
         android:layout_below="@+id/topFragment"
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/colorFragment"
-        android:name="com.serafinebot.dint.examfragments.fragment_color"
+        android:name="com.serafinebot.dint.examfragments.ColorFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/twoFragment"

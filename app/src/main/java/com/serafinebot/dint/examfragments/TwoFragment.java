@@ -1,28 +1,30 @@
 package com.serafinebot.dint.examfragments;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_top#newInstance} factory method to
+ * Use the {@link TwoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_top extends Fragment {
-    private static final String TAG = "fragment_top";
+public class TwoFragment extends Fragment {
+    private static final String TAG = "TwoFragment";
 
-    private EditText editText = null;
-    private SeekBar seekBar = null;
-    private Button changeTextButton = null;
+    private TextView textView = null;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +35,7 @@ public class fragment_top extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_top() {
+    public TwoFragment() {
         // Required empty public constructor
     }
 
@@ -43,11 +45,11 @@ public class fragment_top extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_top.
+     * @return A new instance of fragment fragment_two.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_top newInstance(String param1, String param2) {
-        fragment_top fragment = new fragment_top();
+    public static TwoFragment newInstance(String param1, String param2) {
+        TwoFragment fragment = new TwoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,17 +69,23 @@ public class fragment_top extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_top, container, false);
+        View view =  inflater.inflate(R.layout.fragment_two, container, false);
 
-        editText = view.findViewById(R.id.textInput);
-        seekBar = view.findViewById(R.id.textSize);
-        changeTextButton = view.findViewById(R.id.textButton);
-
-        changeTextButton.setOnClickListener(v -> {
-            int textSize = seekBar.getProgress();
-            String text = String.valueOf(editText.getText());
-        });
+        textView = view.findViewById(R.id.textView);
 
         return view;
+    }
+
+    public void updateText(String text, int size) {
+        Log.d(TAG, "updateText: " + text + size);
+        if (textView != null) {
+            textView.setText(text);
+            textView.setTextSize(size);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void updateColor(Color color) {
+        textView.setTextColor(color.toArgb());
     }
 }
