@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <fragment
         android:id="@+id/topFragment"
         android:name="com.serafinebot.dint.examfragments.fragment_top"
@@ -17,7 +16,7 @@
         android:id="@+id/twoFragment"
         android:name="com.serafinebot.dint.examfragments.fragment_two"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400sp"
         android:layout_below="@+id/topFragment"
         tools:layout="@layout/fragment_two" />
 
@@ -27,6 +26,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/twoFragment"
-        android:layout_marginTop="-249dp"
         tools:layout="@layout/fragment_color" />
 </RelativeLayout>

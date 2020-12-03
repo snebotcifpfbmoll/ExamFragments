@@ -16,21 +16,24 @@
             android:id="@+id/redSlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:max="100" />
 
         <SeekBar
             android:id="@+id/greenSlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/redSlider"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:max="100" />
 
         <SeekBar
             android:id="@+id/blueSlider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/greenSlider"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:max="100" />
 
         <Button
             android:id="@+id/changeColorButton"

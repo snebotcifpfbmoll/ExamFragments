@@ -13,24 +13,26 @@
 
         <EditText
             android:id="@+id/textInput"
-            android:text="Sample text"
-            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Sample text" />
 
         <SeekBar
             android:id="@+id/textSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textInput"
             android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:min="10"
+            android:max="60" />
 
         <Button
             android:id="@+id/textButton"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/textSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/textSize"
+            android:layout_centerHorizontal="true"
             android:text="Change text" />
     </RelativeLayout>
 </FrameLayout>

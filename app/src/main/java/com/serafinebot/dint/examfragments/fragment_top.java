@@ -4,9 +4,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SeekBar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class fragment_top extends Fragment {
+    private static final String TAG = "fragment_top";
+
+    private EditText editText = null;
+    private SeekBar seekBar = null;
+    private Button changeTextButton = null;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +67,17 @@ public class fragment_top extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_top, container, false);
+        View view = inflater.inflate(R.layout.fragment_top, container, false);
+
+        editText = view.findViewById(R.id.textInput);
+        seekBar = view.findViewById(R.id.textSize);
+        changeTextButton = view.findViewById(R.id.textButton);
+
+        changeTextButton.setOnClickListener(v -> {
+            int textSize = seekBar.getProgress();
+            String text = String.valueOf(editText.getText());
+        });
+
+        return view;
     }
 }
