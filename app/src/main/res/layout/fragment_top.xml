@@ -16,16 +16,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="Sample text" />
+            android:text="@string/sample_text" />
 
         <SeekBar
             android:id="@+id/textSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="40sp"
             android:layout_below="@+id/textInput"
             android:layout_centerHorizontal="true"
-            android:min="10"
-            android:max="60" />
+            android:max="100"
+            android:progressTint="@color/sliderTopProgress"
+            android:thumbTint="@color/sliderTopThumb" />
 
         <Button
             android:id="@+id/textButton"
@@ -33,6 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textSize"
             android:layout_centerHorizontal="true"
-            android:text="Change text" />
+            android:text="@string/change_text" />
     </RelativeLayout>
 </FrameLayout>

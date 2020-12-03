@@ -3,4 +3,13 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="sliderTopProgress">#404040</color>
+    <color name="sliderTopThumb">#0c0c0c</color>
+    <color name="redProgress">#ff0000</color>
+    <color name="redThumb">#ff3232</color>
+    <color name="greenProgress">#00ff00</color>
+    <color name="greenThumb">#32ff32</color>
+    <color name="blueProgress">#0000ff</color>
+    <color name="blueThumb">#3232ff</color>
 </resources>

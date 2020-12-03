@@ -17,7 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:max="255" />
+            android:max="255"
+            android:progressTint="@color/redProgress"
+            android:thumbTint="@color/redThumb" />
 
         <SeekBar
             android:id="@+id/greenSlider"
@@ -25,7 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/redSlider"
             android:layout_centerHorizontal="true"
-            android:max="255" />
+            android:max="255"
+            android:progressTint="@color/greenProgress"
+            android:thumbTint="@color/greenThumb" />
 
         <SeekBar
             android:id="@+id/blueSlider"
@@ -33,7 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/greenSlider"
             android:layout_centerHorizontal="true"
-            android:max="255" />
+            android:max="255"
+            android:progressTint="@color/blueProgress"
+            android:thumbTint="@color/blueThumb" />
 
         <Button
             android:id="@+id/changeColorButton"
@@ -41,6 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/blueSlider"
             android:layout_centerHorizontal="true"
-            android:text="Change color" />
+            android:text="@string/change_color" />
     </RelativeLayout>
 </FrameLayout>
