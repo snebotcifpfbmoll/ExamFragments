@@ -21,6 +21,7 @@
         android:layout_below="@+id/textInput"
         android:layout_centerHorizontal="true"
         android:max="100"
+        android:min="20"
         android:minHeight="40sp"
         android:progressTint="@color/sliderTopProgress"
         android:thumbTint="@color/sliderTopThumb" />

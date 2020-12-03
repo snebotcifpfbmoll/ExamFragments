@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDelegate 
 
     @Override
     public void didChangeText(String text, int size) {
-        Log.d(TAG, "didChangeText: " + text + size);
         if (twoFragment != null) twoFragment.updateText(text, size);
     }
 
