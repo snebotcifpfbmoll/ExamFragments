@@ -7,8 +7,14 @@
     android:orientation="vertical"
     tools:context=".ColorFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
     <SeekBar
         android:id="@+id/redSlider"
+        android:layout_marginTop="@dimen/default_top_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
