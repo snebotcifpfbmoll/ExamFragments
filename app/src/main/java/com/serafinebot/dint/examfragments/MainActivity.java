@@ -3,7 +3,6 @@ package com.serafinebot.dint.examfragments;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDelegate 
     }
 
     @Override
-    public void didChangeColor(Color color) {
+    public void didChangeColor(int color) {
         if (twoFragment != null) twoFragment.updateColor(color);
     }
 }

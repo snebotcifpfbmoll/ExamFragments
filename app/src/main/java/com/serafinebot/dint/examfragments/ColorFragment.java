@@ -37,7 +37,7 @@ public class ColorFragment extends Fragment {
             int red = redBar.getProgress();
             int green = greenBar.getProgress();
             int blue = blueBar.getProgress();
-            if (delegate != null) delegate.didChangeColor(Color.valueOf(red, green, blue));
+            if (delegate != null) delegate.didChangeColor(Color.argb(255 ,red, green, blue));
         });
 
         return view;
